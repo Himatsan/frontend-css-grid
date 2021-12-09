@@ -1,1 +1,86 @@
-/*Maak hier jouw CSS!*/
+
+/* default root values */
+:root{
+    --default-padding: 20px;
+    --row-color: hsl(358, 49%, 41%);
+    --border: 1px solid hsl(255, 100%, 0%);
+    --bg-container: hsl(60, 78%, 82%);
+    --text-align: center;
+}
+
+
+
+/* Added extra row class for styling purposes only*/
+.items{
+    background-color: var(--row-color);
+    color: hsl(255, 100%, 100%);
+    text-align: var(--text-align);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+/* actual container contents */
+
+.container{
+    height: 100%;
+    background-color: var(--bg-container);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 50px 190px 100px auto 50px);
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    grid-template-areas: 
+    "a c c"
+    "b c c"
+    "b e d"
+    "b e ."
+    "f f f"
+}
+
+
+/* grid items */
+.item-a{
+    grid-area: a;
+    border: var(--border);
+    padding: var(--default-padding);
+}
+.item-b{
+    grid-area: b;
+    border: var(--border);
+    padding: var(--default-padding);
+    overflow: hidden;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    justify-content: none;
+}
+.item-c{
+    grid-area: c;
+    border: var(--border);
+    padding: var(--default-padding);
+    vertical-align: middle;
+}
+.item-d{
+    grid-area: d;
+    border: var(--border);
+    padding: var(--default-padding);
+}
+.item-e{
+    grid-area: e;
+    border: var(--border);
+    padding: var(--default-padding);
+}
+.item-f{
+    grid-area: f;
+    border: var(--border);
+    padding: var(--default-padding);
+
+}
+.lege-div{
+    border: var(--border);
+    padding: var(--default-padding);
+    white-space: pre;
+}
